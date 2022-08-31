@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 
-import EmojiPicker from "emoji-picker-react";
+// import EmojiPicker from "emoji-picker-react";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
@@ -52,9 +52,9 @@ const AddCategory = ({ navigateBack }) => {
             }}
             variant="standard"
             InputProps={{
-              endAdornment: (
-                chosenEmoji ? <InputAdornment position="end">{chosenEmoji.emoji}</InputAdornment> : "none"
-              ),
+              // endAdornment: (
+              //   chosenEmoji ? <InputAdornment position="end">{chosenEmoji.emoji}</InputAdornment> : "none"
+              // ),
               disableUnderline: true,
             }}
           />
@@ -63,11 +63,11 @@ const AddCategory = ({ navigateBack }) => {
 
       <Grid sx={{ marginBlockStart: "2em" }} container>
         <Grid display="flex" justifyContent="center" xs={12}>
-          <EmojiPicker
+          {/* <EmojiPicker
             onEmojiClick={onEmojiClick}
             disableAutoFocus={true}
             native
-          />
+          /> */}
         </Grid>
       </Grid>
     </>

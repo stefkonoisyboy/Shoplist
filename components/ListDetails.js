@@ -145,7 +145,7 @@ const ListDetails = ({
         </Grid>
         <Grid xs={6}>
           <Typography variant="h6" gutterBottom>
-            {items[0].listName}
+            {items.length ? items[0].listName : ""}
           </Typography>
         </Grid>
         <Grid xs={2}>

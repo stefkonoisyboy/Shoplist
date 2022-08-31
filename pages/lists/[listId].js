@@ -70,7 +70,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: true,
+    fallback: false,
     paths: lists.map((list) => ({
       params: { listId: list.serialNumber.toString() },
     })),
@@ -97,14 +97,14 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      items: items.map((item) => ({
+      items: items.length > 0 ? items.map((item) => ({
         serialNumber: item.serialNumber,
         name: item.name,
         isBought: item.isBought,
         categoryIcon: categories.find((c) => c.serialNumber === item.categoryId)
           .icon,
         listName: list.name,
-      })),
+      })) : [],
       revalidate: 1,
     },
   };
