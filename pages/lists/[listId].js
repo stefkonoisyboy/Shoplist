@@ -64,13 +64,14 @@ export async function getStaticPaths() {
   const db = client.db();
 
   const listsCollection = db.collection("lists");
+  const itemsCollection = db.collection("items");
 
   const lists = await listsCollection.find({}, { serialNumber: 1 }).toArray();
 
   client.close();
 
   return {
-    fallback: false,
+    fallback: "blocking",
     paths: lists.map((list) => ({
       params: { listId: list.serialNumber.toString() },
     })),
